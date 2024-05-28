@@ -1,0 +1,188 @@
+{% extends "dreambooth/layout.html" %}
+{% load static %}
+{% block body %}
+
+<section class="training-form">
+    <div class="inner-training-form-box">
+        <span>Train a custom model using kohya train network LoRA python code..</span>
+        <form action="">
+            <div class="input-section">
+                <select id="cars" name="cars">
+                    <option value="volvo">Configration</option>
+                    <option value="saab">Option-1</option>
+                    <option value="fiat">Option-2</option>
+                    <option value="audi">Option-3</option>
+                </select>
+            </div>
+            <div class="input-section">
+                <select id="cars" name="cars">
+                    <option value="volvo">Accelerate lunch</option>
+                    <option value="saab">Option-1</option>
+                    <option value="fiat">Option-2</option>
+                    <option value="audi">Option-3</option>
+                </select>
+            </div>
+            <div class="input-section">
+                <select id="cars" name="cars">
+                    <option value="volvo">Model</option>
+                    <option value="saab">Option-1</option>
+                    <option value="fiat">Option-2</option>
+                    <option value="audi">Option-3</option>
+                </select>
+            </div>
+            <div class="input-section">
+                <select id="cars" name="cars">
+                    <option value="volvo">Metadata</option>
+                    <option value="saab">Option-1</option>
+                    <option value="fiat">Option-2</option>
+                    <option value="audi">Option-3</option>
+                </select>
+            </div>
+            <div class="input-section">
+                <select id="cars" name="cars">
+                    <option value="volvo">Folders</option>
+                    <option value="saab">Option-1</option>
+                    <option value="fiat">Option-2</option>
+                    <option value="audi">Option-3</option>
+                </select>
+            </div>
+            <div class="input-section">
+                <select id="cars" name="cars">
+                    <option value="volvo">Dataset Prepration</option>
+                    <option value="saab">Option-1</option>
+                    <option value="fiat">Option-2</option>
+                    <option value="audi">Option-3</option>
+                </select>
+            </div>
+
+            <div class="Parameters ">
+                <span>Parameters</span>
+                <div class=" inner-parameter ">
+                    <span>Presets</span>
+                    <div class="input-section">
+                        <select id="cars" name="cars">
+                            <option value="volvo">None</option>
+                            <option value="saab">Option-1</option>
+                            <option value="fiat">Option-2</option>
+                            <option value="audi">Option-3</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="Parameters ">
+                <span>Parameters</span>
+                <div class=" inner-parameter ">
+                    <span>Basic</span>
+                    <div class="Basic-Parameters inner-parameter">
+                        <section>
+                            <div class=" inner-parameter  ">
+                                <span>LoRA type</span>
+                                <div class="input-section ">
+                                    <select id="cars" name="cars">
+                                        <option value="volvo">Standard</option>
+                                        <option value="saab">Option-1</option>
+                                        <option value="fiat">Option-2</option>
+                                        <option value="audi">Option-3</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </section>
+                        <section class=" inform-section-2 ">
+                            <section>
+                                <div class=" inner-parameter  ">
+                                    <span>Network Weights</span> <br>
+                                    <span class="small-text">Path to an existing LoRA network Weights to resume training
+                                        from</span>
+                                    <div class="input-section ">
+                                        <input type="text" style="width: 80%;" placeholder="(Optional)">
+                                    </div>
+                                </div>
+                            </section>
+                            <section>
+                                <div class=" inner-parameter  ">
+                                    <!-- <span>Network Weights</span> <br> -->
+                                    <span class="small-text">Automaticlly determine the dim(rank) from the Weights file
+                                    </span>
+                                    <div class="input-section " style="display: flex;">
+                                        <input type="checkbox" class="checkbox" placeholder="(Optional)">
+                                        <span style="font-weight: bold;">DIM Form Weights</span>
+                                    </div>
+                                </div>
+                            </section>
+                        </section>
+                    </div>
+                    <div class="Basic-Parameters inner-parameter-2">
+                        <section>
+                            <div class=" inner-parameter " style="margin: 0px;">
+                                <span>LoRA type</span>
+                                <input type="text" style="width: 25px; ; ">
+                                <div class="input-section ">
+                                    <select id="cars" name="cars">
+                                        <option value="volvo">Standard</option>
+                                        <option value="saab">Option-1</option>
+                                        <option value="fiat">Option-2</option>
+                                        <option value="audi">Option-3</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </section>
+                        <section>
+                            <div class=" inner-parameter  ">
+                                <span>Epoch</span> <br>
+                                <!-- <span class="small-text">Path to an existing LoRA network Weights to resume training -->
+                                    from</span>
+                                <div class="input-section ">
+                                    <input type="text" style="width: 80%;" placeholder="">
+                                </div>
+                            </div>
+                        </section>
+                        <section>
+                            <div class=" inner-parameter  ">
+                                <span>Max Train Epoch</span> <br>
+                                <span class="small-text">Training epoch (Overrides max_train_step), 0 = no Overrides</span>
+                                <div class="input-section ">
+                                    <input type="text" style="width: 80%;" placeholder="">
+                                </div>
+                            </div>
+                        </section>
+                        <section>
+                            <div class=" inner-parameter  ">
+                                <span>Max Train Step</span> <br>
+                                <span class="small-text">Overrides #training step 0 = no Overrides</span>
+                                <div class="input-section ">
+                                    <input type="text" style="width: 80%;" placeholder="">
+                                </div>
+                            </div>
+                        </section>
+                        <section>
+                            <div class=" inner-parameter  ">
+                                <span>Save every n epoch</span> <br>
+                                <!-- <span class="small-text">Path to an existing LoRA network Weights to resume training -->
+                                    <!-- from</span> -->
+                                <div class="input-section ">
+                                    <input type="text" style="width: 80%;" placeholder="">
+                                </div>
+                            </div>
+                        </section>
+                        <section>
+                            <div class=" inner-parameter  ">
+                                <span>Caption file extension</span> <br>
+                                <!-- <span class="small-text">Path to an existing LoRA network Weights to resume training -->
+                                    <!-- from</span> -->
+                                                                <select id="cars" name="cars">
+                                                                    <option value="volvo">.txt</option>
+                                                                    <option value="saab">Option-1</option>
+                                                                    <option value="fiat">Option-2</option>
+                                                                    <option value="audi">Option-3</option>
+                                                                </select>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+
+
+{% endblock body %}
